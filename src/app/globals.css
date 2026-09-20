@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #111827;
+  --muted: #4b5563;
+  --violet: #5b3df5;
+  --lime: #dfff4f;
+  --danger: #a3210b;
+  --ok: #0b6b4d;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  color-scheme: light;
+}
+
+/* Signature: a notebook dot grid behind everything. */
+body {
+  background-color: #fff;
+  background-image: radial-gradient(#c9cde0 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+.display {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+/* Highlighter marker under key words */
+.mark {
+  background: linear-gradient(transparent 55%, var(--lime) 55%, var(--lime) 92%, transparent 92%);
+  padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 1rem;
+}
+.field {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.75rem;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  font: inherit;
+}
+.label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 1rem;
+  background: var(--violet);
+  color: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.btn-quiet {
+  background: #fff;
+  color: var(--ink);
+}
+.btn-danger {
+  background: #fff;
+  color: var(--danger);
+  border-color: var(--danger);
+  box-shadow: 3px 3px 0 var(--danger);
+}
+.pill {
+  display: inline-block;
+  padding: 0.05rem 0.55rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
